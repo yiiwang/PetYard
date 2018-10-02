@@ -1,10 +1,10 @@
 const express = require('express')
 export default class WebServer {
-  constructor () {
+  constructor() {
     this.app = express()
     this.app.use(express.static('dist/public'))
   }
-  start () {
+  start() {
     return new Promise((resolve, reject) => {
       try {
         this.server = this.app.listen(3000, function () {
@@ -16,7 +16,7 @@ export default class WebServer {
       }
     })
   }
-  stop () {
+  stop() {
     return new Promise((resolve, reject) => {
       try {
         this.server.close(() => {
